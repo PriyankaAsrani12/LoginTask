@@ -25,10 +25,12 @@ const swaggerOptions={
 
 app.use(
   cors({
-    origin: true,
-    credentials: true,
+    origin: "*",
+    credentials: true
   })
 );
+
+
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs-launchprj", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
